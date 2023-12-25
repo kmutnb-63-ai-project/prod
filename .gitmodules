@@ -1,0 +1,7 @@
+[submodule "AI_Backend"]
+	path = AI_Backend
+	url = https://github.com/Ryuthns/AI_Backend
+
+[submodule "make-sense"]
+	path = make-sense
+	url = https://github.com/TNKbenz/make-sense

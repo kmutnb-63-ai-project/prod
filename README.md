@@ -12,7 +12,7 @@ This guide will help you set up and run the project using Docker Compose.
 The project consists of the following main components:
 
 - `AI_Backend`: Backend service
-- `make-sense`: Possibly a utility or another service
+- `make-sense`: Frontend service
 - `.gitignore`: Git ignore file
 - `.gitmodules`: Git submodules configuration
 - `docker-compose.yaml`: Docker Compose configuration file

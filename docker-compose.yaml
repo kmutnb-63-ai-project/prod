@@ -1,9 +1,9 @@
-version: "3"
 services:
   frontend:
     build:
       context: ./make-sense
       dockerfile: ./docker/Dockerfile
+    pull_policy: always
     ports:
       - "80:80"
     depends_on:
@@ -13,8 +13,22 @@ services:
     build:
       context: ./AI_Backend/backend
       dockerfile: Dockerfile
+    pull_policy: always
     volumes:
       - ./user_project:/app/user_project
     ports:
       - "8000:8000"
+    depends_on:
+      - mongodb
     # Add any other configurations for your backend service here
+
+  mongodb:
+    image: mongo
+    command: --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
